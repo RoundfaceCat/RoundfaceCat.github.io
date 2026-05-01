@@ -1,0 +1,10 @@
+#site-info #site-title {
+  display: none;
+}
+
+#subtitle {
+  font-family: 'KaiTi', 'STKaiti', 'Kaiti SC', 'AR PL UKai CN', serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+

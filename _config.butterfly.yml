@@ -1,0 +1,25 @@
+lightbox: medium_zoom
+
+comments:
+  use: Utterances
+
+utterances:
+  repo: RoundfaceCat/RoundfaceCat.github.io
+
+avatar:
+  img: /images/avatar.jpg
+
+subtitle:
+  enable: true
+  effect: false
+  sub:
+    - 选得幽居惬野情，终年无送亦无迎。——李翱《赠药山高僧惟俨（其二）》
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+
+aside:
+  card_author:
+    button:
+      link: https://github.com/RoundfaceCat
