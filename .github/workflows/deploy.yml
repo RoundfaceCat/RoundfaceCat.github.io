@@ -3,9 +3,6 @@ name: Auto Deploy
 on:
   push:
     branches: [main]
-    paths:
-      - 'source/_posts/**'
-      - 'source/images/**'
 
 jobs:
   build-and-deploy:
