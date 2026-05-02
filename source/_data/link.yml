@@ -1,0 +1,11 @@
+- class_name: ❤️ 友情链接
+  class_desc: 一些好博客和好网站
+  link_list:
+    - name: Hexo
+      link: https://hexo.io
+      avatar: https://hexo.io/icon/favicon-196x196.png
+      descr: 快速、简洁且高效的博客框架
+    - name: 仲夏夜的银梦
+      link: https://kespher.github.io
+      avatar: https://avatars.githubusercontent.com/u/63092554?v=4
+      descr: 逸一时，误一世
