@@ -25,20 +25,16 @@ jobs:
         run: npm install
 
       - name: Disable deployer for CI
-        run: node -e "const fs=require('fs');let c=fs.readFileSync('_config.yml','utf8').replace(/deploy:[\s\S]*?(?=\n\w|\n$)/m,'');fs.writeFileSync('_config.yml',c)"
+        run: node -e "const fs=require('fs');let c=fs.readFileSync('_config.yml','utf8').replace(/(?:^|\n)deploy:[\s\S]*?(?=\n\w|\n*$)/,'');fs.writeFileSync('_config.yml',c)"
 
       - name: Generate site
         run: npx hexo generate
 
-      - name: Deploy to gh-pages branch
-        env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd public
-          git init
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add -A
-          git commit -m "deploy"
-          git remote add origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
-          git push -f origin HEAD:gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
+          enable_jekyll: false
