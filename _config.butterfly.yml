@@ -1,3 +1,7 @@
+menu:
+  友链: /link/ || fas fa-link
+  绘图: /geogebra/ || fas fa-chart-line
+
 lightbox: medium_zoom
 
 comments:
@@ -13,13 +17,15 @@ subtitle:
   enable: true
   effect: false
   sub:
-    - 选得幽居惬野情，终年无送亦无迎。——李翱《赠药山高僧惟俨（其二）》
+    - 选得幽居惬野情，终年无送亦无迎。
 
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
 
 aside:
+  card_announcement:
+    content: 不定期更新
   card_author:
     button:
       link: https://github.com/RoundfaceCat
