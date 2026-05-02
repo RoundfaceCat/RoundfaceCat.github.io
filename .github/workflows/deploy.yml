@@ -27,6 +27,9 @@ jobs:
       - name: Generate site
         run: npx hexo generate
 
+      - name: Ensure .nojekyll
+        run: touch public/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
