@@ -28,13 +28,15 @@ input {
 input:focus { border-color: #4a90d9; }
 .editor-wrapper { border: 1.5px solid #dfe6e9; border-radius: 10px; overflow: hidden; }
 .EasyMDEContainer .editor-toolbar { border: none !important; }
+.EasyMDEContainer .editor-toolbar button { color: #2d3436 !important; background: transparent !important; padding: 0 8px !important; border-radius: 0 !important; }
+.EasyMDEContainer .editor-toolbar button:hover { background: #e9e9e9 !important; }
 .EasyMDEContainer .CodeMirror { border: none !important; min-height: 350px; font-size: 1rem; }
-button {
+button.form-btn {
   padding: 12px 28px; font-size: 1rem; font-weight: 700; border: none; border-radius: 10px;
   cursor: pointer; color: #fff; background: #4a90d9;
 }
-button:disabled { opacity: 0.5; }
-button.danger { background: #e17055; }
+button.form-btn:disabled { opacity: 0.5; }
+button.form-btn.danger { background: #e17055; }
 .btn-row { display: flex; gap: 10px; margin-top: 16px; }
 .btn-row button:first-child { flex: 1; }
 .toast {
@@ -87,8 +89,8 @@ button.danger { background: #e17055; }
       </div>
     </div>
     <div class="btn-row">
-      <button type="button" id="publishBtn" onclick="doPublish()">📤 发布到博客</button>
-      <button type="button" class="danger" onclick="doLogout()">退出</button>
+      <button type="button" id="publishBtn" class="form-btn" onclick="doPublish()">📤 发布到博客</button>
+      <button type="button" class="form-btn danger" onclick="doLogout()">退出</button>
     </div>
   </form>
 </div>
