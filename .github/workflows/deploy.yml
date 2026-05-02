@@ -5,10 +5,16 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,12 +31,18 @@ jobs:
       - name: Generate site
         run: npx hexo generate
 
-      - name: Deploy to gh-pages
-        run: |
-          cd public
-          git init
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add -A
-          git commit -m "deploy"
-          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" master:gh-pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
