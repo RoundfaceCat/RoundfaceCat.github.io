@@ -1,9 +1,9 @@
 ---
-title: 函数图像
+title: GeoGebra
 date: 2026-05-02 12:00:00
 ---
 
-我认为很好用的绘制函数图像的软件：
+## 我认为很好用的绘制函数图像的软件
 
 <div id="ggb-element" style="width:100%;height:600px;max-width:100%;"></div>
 <script src="https://www.geogebra.org/apps/deployggb.js"></script>

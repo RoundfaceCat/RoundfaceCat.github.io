@@ -4,6 +4,9 @@ menu:
 
 lightbox: medium_zoom
 
+favicon: /images/favicon.png
+
+
 comments:
   use: Utterances
 
@@ -29,3 +32,6 @@ aside:
   card_author:
     button:
       link: https://github.com/RoundfaceCat
+    description: 人生有书可读，有资得读，有暇得读，又涵养之如不识字人，是谓善读书者。享世间清福，未有过于此也。
+
+
